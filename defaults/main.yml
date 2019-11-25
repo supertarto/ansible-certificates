@@ -1,2 +1,21 @@
 ---
+cert_ca_private_key:
+  - private_key_path: /etc/ssl/private/default_ca_key.key
+    size: 4096
+    type: RSA
+    owner: root
+    group: root
 
+cert_ca_csr:
+  - name: default_ca_csr.csr
+    path: /etc/ssl/private
+    private_key_path: /etc/ssl/private/default_ca_key.key 
+    country_name: FR
+    organization_name: ""
+    mail_address: ""
+    common_name: ""
+    owner: root
+    group: root
+    subject_alt_name: ""
+    basic_constraints:
+      - CA:TRUECA:TRUE

@@ -1,2 +1,8 @@
 ---
+- name: Install requirements
+  package:
+    name: ["python-cryptography","openssl"]
+    state: present
 
+- include_tasks: ca-generation.yml
+  when: cert_create_ownca

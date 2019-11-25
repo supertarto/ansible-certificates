@@ -1,0 +1,22 @@
+---
+- name: Create CA private key
+  openssl_privatekey:
+    path: "{{ item.private_key_path }}"
+    type: "{{ item.type }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+  with_items: cert_ca_private_key
+
+- name: CA - Générer un CSR pour le CA - En production
+  openssl_csr:
+    path: "{{ item.path }}/{{ item.name }}"
+    privatekey_path: "{{ item.private_key_path }}"
+    country_name: "{{ item.country_name }}"
+    organization_name: "{{ citem.organization_name }}"
+    email_address: "{{ item.mail_address }}"
+    common_name: "{{ item.common_name }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    subject_alt_name: "{{ item.subject_alt_name }}"
+    basic_constraints: "{{ item.basic_constraints }}"
+  with_items: cert_ca_csr
