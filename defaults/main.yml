@@ -1,4 +1,5 @@
 ---
+cert_create_ca: true
 cert_ca_private_key:
   - private_key_path: /etc/ssl/private/default_ca_key.key
     size: 4096
@@ -9,7 +10,7 @@ cert_ca_private_key:
 cert_ca_csr:
   - name: default_ca_csr.csr
     path: /etc/ssl/private
-    private_key_path: /etc/ssl/private/default_ca_key.key 
+    private_key_path: /etc/ssl/private/default_ca_key.key
     country_name: FR
     organization_name: ""
     mail_address: ""
