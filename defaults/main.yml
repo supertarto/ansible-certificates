@@ -19,4 +19,4 @@ cert_ca_csr:
     group: root
     subject_alt_name: ""
     basic_constraints:
-      - CA:TRUECA:TRUE
+      - CA:TRUE
