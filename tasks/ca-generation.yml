@@ -9,7 +9,7 @@
 
 - name: Create a CSR for the CA certificate.
   openssl_csr:
-    path: "{{ item.path }}/{{ item.name }}"
+    path: "{{ item.path }}"
     privatekey_path: "{{ item.private_key_path }}"
     country_name: "{{ item.country_name }}"
     organization_name: "{{ citem.organization_name }}"

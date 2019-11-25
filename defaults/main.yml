@@ -8,15 +8,14 @@ cert_ca_private_key:
     group: root
 
 cert_ca_csr:
-  - name: default_ca_csr.csr
-    path: /etc/ssl/private
+  - path: /etc/ssl/private/default_ca_csr.csr
     private_key_path: /etc/ssl/private/default_ca_key.key
     country_name: FR
-    organization_name: ""
-    mail_address: ""
-    common_name: ""
+    organization_name: []
+    mail_address: []
+    common_name: []
     owner: root
     group: root
-    subject_alt_name: ""
+    subject_alt_name: "IP:127.0.0.1"
     basic_constraints:
       - CA:TRUE
