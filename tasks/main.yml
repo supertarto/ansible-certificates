@@ -46,7 +46,7 @@
     privatekey_path: "{{ item.private_key_path }}"
     csr_path: "{{ item.csr_path }}"
     ownca_path: "{{ item.ca_path }}"
-    ownca_privatekey_path: "{{ item.ca_privatekey_path }}"    
+    ownca_privatekey_path: "{{ item.ca_privatekey_path }}"
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
     provider: "{{ item.provider }}"

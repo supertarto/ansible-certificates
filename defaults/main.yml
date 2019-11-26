@@ -28,7 +28,7 @@ cert_ca_cert:
     private_key_path: /etc/ssl/private/default_ca_key.key
     csr_path: /etc/ssl/private/default_ca_csr.csr
     owner: root
-    group: root    
+    group: root
     provider: selfsigned
 
 cert_private_key:
@@ -58,5 +58,5 @@ cert_cert:
     ca_path: "/etc/ssl/certs/default_ca_cert.crt"
     ca_privatekey_path: "/etc/ssl/private/default_ca_key.key"
     owner: root
-    group: root    
+    group: root
     provider: selfsigned
