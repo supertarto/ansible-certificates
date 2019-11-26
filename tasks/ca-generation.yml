@@ -20,3 +20,13 @@
     subject_alt_name: "{{ item.subject_alt_name }}"
     basic_constraints: "{{ item.basic_constraints }}"
   with_items: "{{ cert_ca_csr }}"
+
+- name: Create the CA certificate
+  openssl_certificate:
+    path: "{{ item.path }}"
+    privatekey_path: "{{ item.private_key_path }}"
+    csr_path: "{{ item.csr_path }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    provider: "{{ item.provider }}"
+  with_items: "{{ cert_ca_cert }}"
