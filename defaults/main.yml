@@ -11,9 +11,9 @@ cert_ca_csr:
   - path: /etc/ssl/private/default_ca_csr.csr
     private_key_path: /etc/ssl/private/default_ca_key.key
     country_name: FR
-    organization_name: []
-    mail_address: []
-    common_name: []
+    organization_name: "My organization"
+    mail_address: "my.address@localhost"
+    common_name: "127.0.0.1"
     owner: root
     group: root
     subject_alt_name: "IP:127.0.0.1"
