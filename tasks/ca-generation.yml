@@ -12,7 +12,7 @@
     path: "{{ item.path }}"
     privatekey_path: "{{ item.private_key_path }}"
     country_name: "{{ item.country_name }}"
-    organization_name: "{{ citem.organization_name }}"
+    organization_name: "{{ item.organization_name }}"
     email_address: "{{ item.mail_address }}"
     common_name: "{{ item.common_name }}"
     owner: "{{ item.owner }}"
