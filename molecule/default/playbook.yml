@@ -3,3 +3,64 @@
   hosts: all
   roles:
     - role: supertarto.certificates
+  vars:
+    cert_create_ca: true
+    cert_use_ownca: true
+    cert_use_self_signed: true  
+    cert_ca_private_key:
+      - private_key_path: /etc/ssl/private/default_ca_key.key
+        size: 4096
+        type: RSA
+        owner: root
+        group: root
+
+    cert_ca_csr:
+      - path: /etc/ssl/private/default_ca_csr.csr
+        private_key_path: /etc/ssl/private/default_ca_key.key
+        country_name: FR
+        organization_name: []
+        mail_address: []
+        common_name: []
+        owner: root
+        group: root
+        subject_alt_name: "IP:127.0.0.1"
+        basic_constraints:
+          - CA:TRUE
+
+    cert_ca_cert:
+      - path: /etc/ssl/certs/default_ca_cert.crt
+        private_key_path: /etc/ssl/private/default_ca_key.key
+        csr_path: /etc/ssl/private/default_ca_csr.csr
+        owner: root
+        group: root
+        provider: selfsigned
+
+    cert_private_key:
+      - private_key_path: /etc/ssl/private/default_cert_key.key
+        size: 4096
+        type: RSA
+        owner: root
+        group: root
+
+    cert_csr:
+      - path: /etc/ssl/private/default_cert_csr.csr
+        private_key_path: /etc/ssl/private/default_cert_key.key
+        country_name: FR
+        organization_name: []
+        mail_address: []
+        common_name: []
+        owner: root
+        group: root
+        subject_alt_name: "IP:127.0.0.1"
+        basic_constraints:
+          - CA:FALSE
+
+    cert_cert:
+      - path: /etc/ssl/certs/default_cert.crt
+        private_key_path: /etc/ssl/private/default_cert_key.key
+        csr_path: /etc/ssl/private/default_cert_csr.csr
+        ca_path: "/etc/ssl/certs/default_ca_cert.crt"
+        ca_privatekey_path: "/etc/ssl/private/default_ca_key.key"
+        owner: root
+        group: root
+        provider: selfsigned
