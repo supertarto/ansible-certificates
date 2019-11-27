@@ -1,5 +1,6 @@
 # Ansible Certificates
 [![Build Status](https://travis-ci.org/supertarto/ansible-certificates.svg?branch=master)](https://travis-ci.org/supertarto/ansible-certificates)
+Create self-signed certificates with Ansible.
 
 ## Requirements
 None
