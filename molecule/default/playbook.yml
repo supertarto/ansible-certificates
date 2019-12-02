@@ -2,7 +2,7 @@
 - name: Converge
   hosts: all
   roles:
-    - role: ansible-certificates
+    - role: supertarto.certificates
   vars:
     cert_create_ca: true
     cert_use_ownca: true
