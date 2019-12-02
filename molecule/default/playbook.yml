@@ -25,7 +25,7 @@
         group: root
         subject_alt_name: "IP:127.0.0.1"
         basic_constraints:
-          - CA:TRUE
+          - "CA:TRUE"
 
     cert_ca_cert:
       - path: /etc/ssl/certs/default_ca_cert.crt
@@ -53,7 +53,7 @@
         group: root
         subject_alt_name: "IP:127.0.0.1"
         basic_constraints:
-          - CA:FALSE
+          - "CA:FALSE"
 
     cert_cert:
       - path: /etc/ssl/certs/default_cert.crt
