@@ -1,7 +1,7 @@
 ---
 - name: Install requirements
   package:
-    name: ["python-cryptography", "openssl"]
+    name: ["openssl", "python-cryptography"]
     state: present
 
 - include_tasks: ca-generation.yml
