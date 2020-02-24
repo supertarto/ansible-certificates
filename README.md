@@ -6,7 +6,6 @@ Create self-signed certificates with Ansible.
 None
 
 ## Tested plateform
-* Debian 9 (Stretch)
 * Debian 10 (Buster)
 
 ## Role variables
