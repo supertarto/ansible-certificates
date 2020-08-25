@@ -25,6 +25,7 @@ cert_ca_private_key: []
 #    type: RSA
 #    owner: root
 #    group: root
+#    mode: 0600
 
 cert_ca_csr: []
 # Exemple
@@ -36,6 +37,7 @@ cert_ca_csr: []
 #    common_name: []
 #    owner: root
 #    group: root
+#    mode: 0640
 #    subject_alt_name: "IP:127.0.0.1"
 #    basic_constraints:
 #      - CA:TRUE
@@ -47,6 +49,7 @@ cert_ca_cert: []
 #    csr_path: /etc/ssl/private/default_ca_csr.csr
 #    owner: root
 #    group: root
+#    mode: 0644
 #    provider: selfsigned
 ```
 Information about our Certificate: Private Key, CSR, and Cert. For the cert, if you want it to be signed by your own CA, you must define the **ca_path** and the **ca_privatekey_path**.
@@ -58,6 +61,7 @@ cert_private_key: []
 #    type: RSA
 #    owner: root
 #    group: root
+#    mode: 0600
 
 cert_csr: []
 # Exemple
@@ -69,6 +73,7 @@ cert_csr: []
 #    common_name: []
 #    owner: root
 #    group: root
+#    mode: 0640
 #    subject_alt_name: "IP:127.0.0.1"
 #    basic_constraints:
 #      - CA:FALSE
@@ -82,6 +87,7 @@ cert_cert: []
 #    ca_privatekey_path: "/etc/ssl/private/default_ca_key.key"
 #    owner: root
 #    group: root
+#    mode: 0644
 #    provider: selfsigned
 ```
 
@@ -98,6 +104,7 @@ cert_cert: []
         type: RSA
         owner: root
         group: root
+        mode: 0600
 
     cert_csr:
       - path: /etc/ssl/private/default_cert_csr.csr
@@ -108,6 +115,7 @@ cert_cert: []
         common_name: []
         owner: root
         group: root
+        mode: 0640
         subject_alt_name: "IP:127.0.0.1"
         basic_constraints:
           - CA:FALSE
@@ -118,6 +126,7 @@ cert_cert: []
         csr_path: /etc/ssl/private/default_cert_csr.csr
         owner: root
         group: root
+        mode: 0644
         provider: selfsigned
 ```
 ## Installation

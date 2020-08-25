@@ -13,6 +13,7 @@
     type: "{{ item.type }}"
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
   with_items: "{{ cert_private_key }}"
 
 - name: Create a CSR for the certificate.
@@ -27,6 +28,7 @@
     group: "{{ item.group }}"
     subject_alt_name: "{{ item.subject_alt_name }}"
     basic_constraints: "{{ item.basic_constraints }}"
+    mode: "{{ item.mode }}"
   with_items: "{{ cert_csr }}"
 
 - name: Create a self-signed certificate(Without our CA)
@@ -37,6 +39,7 @@
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
     provider: "{{ item.provider }}"
+    mode: "{{ item.mode }}"
   with_items: "{{ cert_cert }}"
   when: cert_use_self_signed and not cert_use_ownca
 
@@ -50,5 +53,6 @@
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
     provider: "{{ item.provider }}"
+    mode: "{{ item.mode }}"
   with_items: "{{ cert_cert }}"
   when: cert_use_self_signed and cert_use_ownca

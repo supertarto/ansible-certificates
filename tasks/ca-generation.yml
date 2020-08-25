@@ -5,6 +5,7 @@
     type: "{{ item.type }}"
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
   with_items: "{{ cert_ca_private_key }}"
 
 - name: Create a CSR for the CA certificate.
@@ -19,6 +20,7 @@
     group: "{{ item.group }}"
     subject_alt_name: "{{ item.subject_alt_name }}"
     basic_constraints: "{{ item.basic_constraints }}"
+    mode: "{{ item.mode }}"
   with_items: "{{ cert_ca_csr }}"
 
 - name: Create the CA certificate
@@ -29,4 +31,5 @@
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
     provider: "{{ item.provider }}"
+    mode: "{{ item.mode }}"
   with_items: "{{ cert_ca_cert }}"
