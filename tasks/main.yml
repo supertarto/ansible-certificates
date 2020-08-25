@@ -43,7 +43,7 @@
   with_items: "{{ cert_cert }}"
   when: cert_use_self_signed and not cert_use_ownca
 
-- name: Create a self-signed certificate(Without our CA)
+- name: Create a self-signed certificate(With our CA)
   openssl_certificate:
     path: "{{ item.path }}"
     privatekey_path: "{{ item.private_key_path }}"
