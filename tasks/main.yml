@@ -1,8 +1,14 @@
 ---
 - name: Install requirements
   package:
-    name: ["openssl"]
+    name: ["openssl","python3-pip", "python3-setuptools", "python3-dev"]
     state: present
+
+- name: Install pip requirements
+  pip:
+    name: ["cryptography"]
+    state: present
+    executable: "pip3"
 
 - include_tasks: ca-generation.yml
   when: cert_create_ca
