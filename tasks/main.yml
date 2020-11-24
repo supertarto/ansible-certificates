@@ -1,7 +1,7 @@
 ---
 - name: Install requirements
   package:
-    name: ["openssl","python3-pip", "python3-setuptools", "python3-dev"]
+    name: ["openssl", "python3-pip", "python3-setuptools", "python3-dev"]
     state: present
 
 - name: Install pip requirements
