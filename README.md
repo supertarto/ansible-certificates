@@ -1,5 +1,5 @@
 # Ansible Certificates
-[![Build Status](https://travis-ci.com/supertarto/ansible-certificates.svg?branch=master)](https://travis-ci.com/supertarto/ansible-certificates)
+[![CI](https://github.com/supertarto/ansible-certificates/workflows/CI/badge.svg?event=push)](https://github.com/supertarto/ansible-certificates/actions?query=workflow%3ACI)
 
 Create self-signed certificates with Ansible.
 
