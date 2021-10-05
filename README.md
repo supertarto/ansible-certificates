@@ -18,17 +18,14 @@ None
 Boolean variables. Those are used to determine if we want to create our own CA, to create a self-signed certificate, and if we want to create a self-signed cert with our own CA.
 
 ```yml
-
 cert_create_ca: false
 cert_use_ownca: false
 cert_use_self_signed: false
-
 ```
 
 Information about our CA: Private Key, CSR, and Cert.
 
 ```yml
-
 cert_ca_private_key: []
 # Exemple
 #  - private_key_path: /etc/ssl/private/default_ca_key.key
@@ -63,7 +60,9 @@ cert_ca_cert: []
 #    mode: "0644"
 #    provider: selfsigned
 ```
+
 Information about our Certificate: Private Key, CSR, and Cert. For the cert, if you want it to be signed by your own CA, you must define the **ca_path** and the **ca_privatekey_path**.
+
 ```yml
 cert_private_key: []
 # Exemple
@@ -103,6 +102,7 @@ cert_cert: []
 ```
 
 ## Examples
+
 ```yml
   hosts: myhost
   roles:
@@ -140,9 +140,13 @@ cert_cert: []
         mode: "0644"
         provider: selfsigned
 ```
+
 ## Installation
-```
+
+```bash
 ansible-galaxy install supertarto.certificates
 ```
+
 ## License
+
 GPL V3.0
