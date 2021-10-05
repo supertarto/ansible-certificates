@@ -1,23 +1,34 @@
 # Ansible Certificates
+
 [![CI](https://github.com/supertarto/ansible-certificates/workflows/CI/badge.svg?event=push)](https://github.com/supertarto/ansible-certificates/actions?query=workflow%3ACI)
 
 Create self-signed certificates with Ansible.
 
 ## Requirements
+
 None
 
 ## Tested plateform
+
 * Debian 10 (Buster)
+* Debian 11 (Bulleyes)
 
 ## Role variables
+
 Boolean variables. Those are used to determine if we want to create our own CA, to create a self-signed certificate, and if we want to create a self-signed cert with our own CA.
+
 ```yml
+
 cert_create_ca: false
 cert_use_ownca: false
 cert_use_self_signed: false
+
 ```
-Information about our CA: Private Key, CSR, and Cert. 
+
+Information about our CA: Private Key, CSR, and Cert.
+
 ```yml
+
 cert_ca_private_key: []
 # Exemple
 #  - private_key_path: /etc/ssl/private/default_ca_key.key

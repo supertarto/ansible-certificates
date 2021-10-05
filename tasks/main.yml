@@ -1,11 +1,11 @@
 ---
 - name: Install requirements
-  package:
+  ansible.builtin.package:
     name: ["openssl", "python3-pip", "python3-setuptools", "python3-dev"]
     state: present
 
 - name: Install pip requirements
-  pip:
+  ansible.builtin.pip:
     name: ["cryptography"]
     state: present
     executable: "pip3"
@@ -14,7 +14,7 @@
   when: cert_create_ca
 
 - name: Create Cert private key
-  openssl_privatekey:
+  ansible.builtin.openssl_privatekey:
     path: "{{ item.private_key_path }}"
     type: "{{ item.type }}"
     owner: "{{ item.owner }}"
@@ -23,7 +23,7 @@
   with_items: "{{ cert_private_key }}"
 
 - name: Create a CSR for the certificate.
-  openssl_csr:
+  ansible.builtin.openssl_csr:
     path: "{{ item.path }}"
     privatekey_path: "{{ item.private_key_path }}"
     country_name: "{{ item.country_name }}"
@@ -38,7 +38,7 @@
   with_items: "{{ cert_csr }}"
 
 - name: Create a self-signed certificate(Without our CA)
-  openssl_certificate:
+  ansible.builtin.openssl_certificate:
     path: "{{ item.path }}"
     privatekey_path: "{{ item.private_key_path }}"
     csr_path: "{{ item.csr_path }}"
@@ -50,7 +50,7 @@
   when: cert_use_self_signed and not cert_use_ownca
 
 - name: Create a self-signed certificate(With our CA)
-  openssl_certificate:
+  ansible.builtin.openssl_certificate:
     path: "{{ item.path }}"
     privatekey_path: "{{ item.private_key_path }}"
     csr_path: "{{ item.csr_path }}"
